@@ -90,11 +90,6 @@ static inline void kfree_call_rcu(struct rcu_head *head,
 	call_rcu(head, func);
 }
 
-static inline void kfree_call_rcu_nobatch(struct rcu_head *head, rcu_callback_t func)
-{
-	call_rcu(head, func);
-}
-
 #define rcu_note_context_switch(preempt) \
 	do { \
 		rcu_sched_qs(); \
